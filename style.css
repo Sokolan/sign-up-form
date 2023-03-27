@@ -3,10 +3,6 @@
     src: url(./font/Norse-Bold.otf);
 }
 
-:root {
-    
-}
-
 html {
     display: flex;
     justify-content: center;
@@ -15,15 +11,12 @@ html {
 body {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     background-color: black;
     width: 80vw;
-    overflow: hidden;
-    height: 100%;
+    height: 100vh;
     margin: 0;
-}
-
-ul {
-    list-style: none;
+    font-family: roboto, sans-serif;
 }
 
 .background-container {
@@ -33,7 +26,7 @@ ul {
 
 .jun-img {
     height: 100vh;
-    width: 100%;
+    width: auto;
 }
 
 .logo {
@@ -49,51 +42,128 @@ ul {
 
 .logo-img {
     height: 15vh;
+    width: auto;
 }
 
 .logo > p {
-    font-size: 10vh;
+    font-size: min(10vh,10vw);
     font-family: norse-bold, sans-serif;
     color: white
 }
 
 .img-credits {
     position: absolute;
-    bottom: 1em;
+    font-size: 0.7vw;
+    bottom: 1vh;
     text-align: center;
     left: 0;
     right: 0;
+    color: white
+}
+
+.img-credits > a {
+    color: white;
 }
 
 .content-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: #f5f5f5;
 }
 
-.description {
-    margin: 30px;
-    
+.content-container > * {
+    padding: 3vw;
 }
 
+.description{
+    font-weight: 500;
+    font-size: min(2.5vh, 3vw);
+    width: 38vw;
+}
 
+form {
+    background-color: white;
+    box-shadow: 0em 10px 10px -10px rgb(156, 156, 156);
+}
 
-li {
+form > legend {
+    font-size: min(3vh, 3vw);
+    font-weight: 500;
+    color: #383a5f;
+}
+
+.form-fields {
+    align-self: last baseline;
     display: flex;
     flex-direction: column;
 }
 
-.form-fields {
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul > div {
     display: flex;
-    gap: 2em;
+    gap: 2.5vw;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    margin-top: 2vh;
+    --form-text: min(1.2vh, 1.5vw);
+}
+
+label {
+    font-size: var(--form-text);
+    letter-spacing: 0.25vh;
+    color: #383a5f;
+    font-weight: 500;
+}
+
+input {
+    border: 1px solid #E5E7EB;
+    font-size: calc(var(--form-text) + 0.5vh);
+    border-radius: 3px;
+    width: 14vw;
+    height: 2.5vh;
+}
+
+input[type="password"]:invalid,
+input[type="confirm-password"]:invalid {
+    border: 1px solid red;
+}
+
+input[type="password"]:valid,
+input[type="confirm-password"]:valid {
+    border: 1px solid rgb(82, 255, 111);
+    outline: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+input:focus {
+    border: 1px solid rgb(1, 127, 177);
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.3);
+    background-color: rgb(241, 241, 241);
 }
 
 button[type="submit"] {
     background-color: #596D48;
+    font-size: min(2vw, 2vh);
     color: white;
     font-weight: 600;
-    padding: 10px;
+    padding: 1.7vh 2.5vw;
     border-radius: 5px;
     border: none;
+    align-self: flex-start;
+    margin-left: 3vw;
+    margin-top: 1.5vw;
+}
+
+.login {
+    margin-top: 1vw;
+    padding: 0 3vw;
+    font-size: min(2vw, 2vh);
 }
