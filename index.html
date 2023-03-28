@@ -53,7 +53,7 @@
                 <div class="password-info">
                     <li>
                         <label for="password">PASSWORD</label>
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password" required data-help="wrong pass" pattern="^[^0-9]+$">
                     </li>
                     <li>
                         <label for="confirm-password">CONFIRM PASSWORD</label>
@@ -61,8 +61,8 @@
                     </li>
                 </div>
             </ul>
-            <button type="submit">Create Account</button>
         </form>
+        <button type="submit" form="signup-form">Create Account</button>
         <p class="login">Already have an account? <a href="">Log in</a></p>
     </div>
 </body>
